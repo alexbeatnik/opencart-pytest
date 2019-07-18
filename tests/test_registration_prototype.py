@@ -13,12 +13,13 @@ def test_prototype():
     director.build_registration()
     registration = RegisterAccountPage()
     registration.open()
-    person = str(builder.person.list_parts()).split(',')
-    registration.fill_personal_details(person[Field.NAME.value],
-                                       person[Field.LAST_NAME.value],
-                                       person[Field.EMAIL.value] + number(),
-                                       person[Field.PHONE.value],
-                                       person[Field.PASSWORD.value]
-                                       )
+    person = str(builder.person.list_parts()).split(",")
+    registration.fill_personal_details(
+        person[Field.NAME.value],
+        person[Field.LAST_NAME.value],
+        person[Field.EMAIL.value] + number(),
+        person[Field.PHONE.value],
+        person[Field.PASSWORD.value],
+    )
     registration.press_continue()
     assert RegistrationSuccessPage(chrome).loaded()

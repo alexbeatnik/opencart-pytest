@@ -80,6 +80,8 @@ class Proxy(Subject):
     def log_access(self) -> None:
         with open('numfile.txt', 'w') as numfile:
             numfile.write(str(self.save_number))
+        Driver().close_connection()
+
 
 
 

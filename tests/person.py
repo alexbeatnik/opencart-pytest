@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod, abstractproperty
 from typing import Any
+import copy
+from mimesis import Person
 
 
 class Builder(ABC):
@@ -42,6 +44,11 @@ class Person():
 class ConcreteBuilder(Builder):
 
     def __init__(self) -> None:
+        self.firstname = 'Alex'
+        self.surname = 'First'
+        self.email = 'alexfirst1@gmail.com'
+        self.phone = '+3809900001'
+        self.password = 'Qwertyui212'
         self.reset()
 
     def reset(self) -> None:
@@ -54,19 +61,19 @@ class ConcreteBuilder(Builder):
         return person
 
     def person_name(self) -> None:
-        self._person.add("Alex")
+        self._person.add(self.firstname)
 
     def person_surname(self) -> None:
-        self._person.add("First")
+        self._person.add(self.surname)
 
     def person_email(self) -> None:
-        self._person.add("alexfirst1@gmail.com")
+        self._person.add(self.email)
 
     def person_phone(self) -> None:
-        self._person.add("+380995552266")
+        self._person.add(self.phone)
 
     def person_password(self) -> None:
-        self._person.add("54321Qwertyui")
+        self._person.add(self.password)
 
 
 class Director:
@@ -98,13 +105,3 @@ def build():
     builder = ConcreteBuilder()
     director.builder = builder
     return director.builder
-
-
-if __name__ == "__main__":
-    director = Director()
-    builder = ConcreteBuilder()
-    director.builder = builder
-
-    print("Standard basic product: ")
-    director.build_registration()
-    print(tuple(builder.person.list_parts()))

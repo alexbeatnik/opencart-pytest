@@ -7,7 +7,6 @@ generator = Person()
 
 
 class Prototype:
-
     def __init__(self):
         self._toBeClonedObjects = {}
 
@@ -26,10 +25,15 @@ class Prototype:
 def prot():
     defaultCar = ConcreteBuilder()
     prototype = Prototype()
-    prototype.registerObject('persons_data', defaultCar)
-    persons_data = prototype.clone('persons_data', firstname=generator.name(), surname=generator.last_name(),
-                                   email=generator.email(), phone=generator.telephone(),
-                                   password=generator.password())
+    prototype.registerObject("persons_data", defaultCar)
+    persons_data = prototype.clone(
+        "persons_data",
+        firstname=generator.name(),
+        surname=generator.last_name(),
+        email=generator.email(),
+        phone=generator.telephone(),
+        password=generator.password(),
+    )
     return persons_data
 
 

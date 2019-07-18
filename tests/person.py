@@ -30,7 +30,7 @@ class Builder(ABC):
         pass
 
 
-class Person():
+class Person:
     def __init__(self) -> None:
         self.parts = []
 
@@ -38,17 +38,16 @@ class Person():
         self.parts.append(part)
 
     def list_parts(self) -> None:
-        return ', '.join(self.parts)
+        return ", ".join(self.parts)
 
 
 class ConcreteBuilder(Builder):
-
     def __init__(self) -> None:
-        self.firstname = 'Alex'
-        self.surname = 'First'
-        self.email = 'alexfirst1@gmail.com'
-        self.phone = '+3809900001'
-        self.password = 'Qwertyui212'
+        self.firstname = "Alex"
+        self.surname = "First"
+        self.email = "alexfirst1@gmail.com"
+        self.phone = "+3809900001"
+        self.password = "Qwertyui212"
         self.reset()
 
     def reset(self) -> None:

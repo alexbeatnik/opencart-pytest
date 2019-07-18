@@ -19,3 +19,8 @@ class Driver(metaclass=MetaClassSingleton):
             self.connection = webdriver.Chrome('/Users/opol2/Downloads/chromedriver')
 
         return self.connection
+
+    def close_connection(self):
+        if self.connection is not None:
+            self.connection.close()
+            return self.connection

@@ -23,9 +23,9 @@ class Prototype:
 
 
 def prot():
-    defaultCar = ConcreteBuilder()
+    defaultPerson = ConcreteBuilder()
     prototype = Prototype()
-    prototype.registerObject("persons_data", defaultCar)
+    prototype.registerObject("persons_data", defaultPerson)
     persons_data = prototype.clone(
         "persons_data",
         firstname=generator.name(),

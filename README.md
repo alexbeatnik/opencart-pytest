@@ -16,3 +16,8 @@ If you need to destroy application, run in the terminal
 ```bash
 sudo docker-compose down
 ```
+### Run test
+To run test you must run in terminal 
+```bash
+pytest 'name of your test'
+```

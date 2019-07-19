@@ -40,7 +40,7 @@ class RegisterAccountPage(Page):
         return "Register Account" in self._browser.title
 
     def fill_personal_details(
-            self, first_name: str, last_name: str, email: str, telephone: str, password: str
+        self, first_name: str, last_name: str, email: str, telephone: str, password: str
     ) -> None:
         self._details.type_first_name(first_name)
         self._details.type_last_name(last_name)

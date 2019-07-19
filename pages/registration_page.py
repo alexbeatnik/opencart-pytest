@@ -1,6 +1,6 @@
 from selenium.webdriver import Remote
 from pages.base import Page
-from tests.browser import Driver
+from modules.browser import Driver
 
 driver = Driver().connect()
 

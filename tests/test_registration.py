@@ -1,4 +1,4 @@
-from tests.proxy import Proxy, RealSubject
+from modules.proxy import Proxy, RealSubject
 
 
 def test_registration() -> None:

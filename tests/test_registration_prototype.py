@@ -1,8 +1,8 @@
 from pages.registration_page import RegisterAccountPage, RegistrationSuccessPage
-from tests.browser import Driver
-from tests.person import Director
-from tests.prototype import build_prot
-from tests.proxy import Field, number
+from modules.browser import Driver
+from modules.person import Director
+from modules.prototype import build_prot
+from modules.proxy import Field, number
 
 
 def test_prototype():

@@ -1,7 +1,7 @@
 import copy
 from mimesis import Person
 
-from tests.person import Director, ConcreteBuilder
+from modules.person import Director, ConcreteBuilder
 
 generator = Person()
 

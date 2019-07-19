@@ -10,34 +10,22 @@ class PersonalDetails:
         self._browser = driver
 
     def type_first_name(self, first_name: str) -> None:
-        first_name_field = self._browser.find_element_by_id("input-firstname")
-        first_name_field.click()
-        first_name_field.send_keys(first_name)
+        self._browser.find_element_by_id("input-firstname").send_keys(first_name)
 
     def type_last_name(self, last_name: str) -> None:
-        last_name_field = self._browser.find_element_by_id("input-lastname")
-        last_name_field.click()
-        last_name_field.send_keys(last_name)
+        self._browser.find_element_by_id("input-lastname").send_keys(last_name)
 
     def type_email(self, email: str) -> None:
-        email_field = self._browser.find_element_by_id("input-email")
-        email_field.click()
-        email_field.send_keys(email)
+        self._browser.find_element_by_id("input-email").send_keys(email)
 
     def type_telephone(self, telephone: str) -> None:
-        telephone_field = self._browser.find_element_by_id("input-telephone")
-        telephone_field.click()
-        telephone_field.send_keys(telephone)
+        self._browser.find_element_by_id("input-telephone").send_keys(telephone)
 
     def type_password(self, password: str) -> None:
-        password_field = self._browser.find_element_by_id("input-password")
-        password_field.click()
-        password_field.send_keys(password)
+        self._browser.find_element_by_id("input-password").send_keys(password)
 
     def confirm_password(self, password: str) -> None:
-        confirm_password_field = self._browser.find_element_by_id("input-confirm")
-        confirm_password_field.click()
-        confirm_password_field.send_keys(password)
+        self._browser.find_element_by_id("input-confirm").send_keys(password)
 
 
 class RegisterAccountPage(Page):

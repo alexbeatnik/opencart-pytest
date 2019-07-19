@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from enum import Enum
 from pages.registration_page import RegisterAccountPage, RegistrationSuccessPage
-from tests.person import Director, ConcreteBuilder
-from tests.browser import Driver
+from modules.person import Director, ConcreteBuilder
+from modules.browser import Driver
 
 
 def number():

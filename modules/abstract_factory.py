@@ -18,7 +18,7 @@ class Name(object):
         return self._name
 
 
-class Contacts(object):
+class LastName(object):
     def __init__(self, name):
 
         self._name = name
@@ -32,7 +32,7 @@ class LatinFactory(AbstractFactory):
         return Name(Faker().first_name())
 
     def create_last_name(self):
-        return Contacts(Faker().last_name())
+        return LastName(Faker().last_name())
 
 
 class CyrillicFactory(AbstractFactory):
@@ -40,7 +40,7 @@ class CyrillicFactory(AbstractFactory):
         return Name(Faker("uk_UA").first_name())
 
     def create_last_name(self):
-        return Contacts(Faker("uk_UA").last_name())
+        return LastName(Faker("uk_UA").last_name())
 
 
 def get_factory(ident):

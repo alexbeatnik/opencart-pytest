@@ -27,7 +27,7 @@ class Contacts(object):
         return self._name
 
 
-class ConcreteFactory1(AbstractFactory):
+class LatinFactory(AbstractFactory):
     def create_name(self):
         return Name(Faker().first_name())
 
@@ -35,7 +35,7 @@ class ConcreteFactory1(AbstractFactory):
         return Contacts(Faker().last_name())
 
 
-class ConcreteFactory2(AbstractFactory):
+class CyrillicFactory(AbstractFactory):
     def create_name(self):
         return Name(Faker("uk_UA").first_name())
 
@@ -45,10 +45,10 @@ class ConcreteFactory2(AbstractFactory):
 
 def get_factory(ident):
     if ident == 'Latin':
-        return ConcreteFactory1()
+        return LatinFactory()
 
     elif ident == 'Cyrillic':
-        return ConcreteFactory2()
+        return CyrillicFactory()
 
 
 def full_person(fabric):
@@ -58,4 +58,3 @@ def full_person(fabric):
         + str(factory.create_last_name()) + ','
         + f"{Faker().ascii_free_email()},{Faker().phone_number()},{Faker().password(special_chars=False)}"
     )
-# print(full_person(2))
